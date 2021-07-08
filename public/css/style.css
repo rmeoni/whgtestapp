@@ -1,0 +1,490 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat/Montserrat-Bold.ttf');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat/Montserrat-Regular.ttf');
+    font-weight: 400;
+}
+body {
+    font-family: 'Montserrat', sans-serif !important;
+    text-align: center;
+}
+
+
+.header {
+    height:200px;
+    background-color: #231F20;
+    text-align: center;
+    display: flex;
+}
+
+
+#logo {
+    margin:auto;
+    position: relative;
+}
+
+
+main {
+    text-align: center;
+    min-height: 280px;
+    margin-bottom: 40px;
+}
+
+#heading {
+    margin:auto;
+    max-width: 340px;
+}
+
+ h2 {
+    font-weight: 700 !important;
+    color: #091D22;
+    font-size: 28px !important;
+    line-height: 36px !important;
+    margin-top: 40px !important;
+    margin-bottom: 40px !important;
+    letter-spacing: -0.8px;
+}
+
+#supporting-p {
+    font-weight: 400;
+    color: rgba(36, 23, 20, 0.4);
+    font-size: 16px;
+    line-height: 24px; 
+    letter-spacing: 0.5px;
+}
+
+#questionContainer label {
+    font-weight: 400;
+    color: rgba(36, 23, 20, 0.6);
+    font-size: 16px;
+    line-height: 24px; 
+    letter-spacing: 0.5px;
+    padding-left: 8px;
+
+}
+
+#questionContainer .option {
+    max-width: 242px;
+    margin: auto;
+    text-align: left;
+    margin-bottom: 12px;
+    padding-left: 20px;
+}
+
+#questionContainer input {
+    margin-right: 8px;
+}
+
+.inputElement {
+    cursor: pointer;
+}
+
+[type="radio"]:not(:checked)+span:before, 
+[type="radio"]:not(:checked)+span:after {
+    border: 2px solid #7B7472 !important;
+}
+
+[type="radio"]:not(:checked)+span,
+[type="radio"]:checked+span  {
+    letter-spacing: 0.5px;
+    font-size: 16px !important;
+}
+
+[type="radio"]:checked+span:after, 
+[type="radio"].with-gap:checked+span:after {
+    background-color: #BD9A65 !important;
+}
+[type="radio"]:checked+span:after, 
+[type="radio"].with-gap:checked+span:before, [type="radio"].with-gap:checked+span:after {
+    border: 2px solid #BD9A65 !important;
+}
+
+p {
+    font-weight: 400 !important;
+    color: rgba(36, 23, 20, 0.6);
+    font-size: 1rem !important;
+    line-height: 24px !important;
+    letter-spacing: 0.5px !important;
+}
+
+.nextQuestionButton {
+    min-width: 187px;
+    height: 46px;
+    padding: 11px 24px 11px 24px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 44px;
+    border-radius: 48px;
+    border: 3px solid #BD9A65;
+    background: transparent;
+    color: #BD9A65;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif !important;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background-color .4s;
+    margin-left: -6px;
+}
+
+.nextQuestionButton.activeButton {
+    background-color: #BD9A65;
+    color: #fff;
+}
+
+#productsContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: stretch;
+    margin-bottom: 44px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 12px;
+    padding-right: 6px;
+    max-width: 800px;
+}
+
+#productsContainer .productDiv {
+    width: 158px;
+    border-radius: 2px;
+    margin-bottom: 20px;
+    margin-right: 16px;
+    background-color: #D3C2A7;
+    /*box-shadow: 0px 2px 2px rgba(113, 109, 110, 0.15);*/
+    box-shadow: 0px 4px 12px rgba(39, 44, 47, 0.1);
+}
+
+.productImage {
+    height: 208px;
+    overflow: hidden;
+}
+
+.productImage img {
+    height:240px;
+}
+
+.productText {
+    display: inline-block;
+    position: center center;
+}
+
+.productText p {
+    font-weight: 400 !important;
+    color: #231F20 !important;
+    font-size: 16px !important;
+    line-height: 18px !important;
+    letter-spacing: 0.5px !important;
+    padding: 8px;
+    /*height: 88px;*/
+ 
+}
+
+#image-label {
+    background-color: #C6AA7F;
+    color: #fff !important;
+    width: 158px;
+    height: 32px;
+}
+
+#sorryDiv {
+    text-align: center;
+}
+
+
+#sorryText {
+    max-width: 800px;
+    padding-left: 24px;
+    padding-right: 24px;
+    text-align: center;
+    display: flex;
+    margin: auto;
+}
+
+#footer {
+    height: 220px;
+    background-color: #231F20;
+    padding-top:60px !important;
+    padding-bottom: 60px !important;
+    margin:auto;
+    display: flex;
+    justify-content: center;
+}
+
+#footer-container {
+    margin-left: -14px;
+    margin-right: auto;
+    margin-top: 0;
+    position: relative;
+    justify-content: center;
+    text-align: center;
+}
+#footer ul {
+    list-style-type: none;
+    margin-bottom: 16px;
+}
+
+#footer ul li {
+    display: inline-block;
+}
+#footer ul li a {
+    transition: color .3s;
+}
+
+#footer ul li a:hover {
+    color: #A9A4A8;
+}
+
+#footer a {
+    color: #BD9A65;
+    text-decoration: none;
+    transition: color .3s;
+    margin-top: 16px;   
+}
+
+#footer a:hover {
+    color: #D3C2A7;
+}
+
+#footer p {
+    color: #fff;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    margin-top: 16px;
+
+}
+
+.hurrayAnimation {
+    width: 300px;
+    height: 300px;
+    margin-left: 25vw;
+    top:200px;
+    position: absolute;
+    display: block;
+    z-index: 2;
+    background: transparent;
+}
+
+lottie-player {
+    position: absolute;
+    margin-left: 10vw;
+    top: -5vh;
+}
+
+* {box-sizing:border-box}
+
+#overlay {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: visibility 0s ease-out;
+    -webkit-transition: visibility 0s ease-out;
+    -moz-transition: visibility 0s ease-out;
+    -ms-transition: visibility 0s ease-out;
+    -o-transition: visibility 0s ease-out;
+}
+
+
+.headerTutorial {
+    height:100px;
+    width: 240px;
+    background-color: #231F20;
+    text-align: center;
+    display: flex;
+    margin: auto;
+}
+
+#logoTutorial {
+    margin:auto;
+    position: relative;
+}
+
+#bodyTutorial {
+    height: 406px;
+    background-color: #fff;
+}
+
+#blurr {
+    top:0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.99;
+    background-color: #7B797B;
+
+    transition: visibility 0.4s ease-in-out;
+    -webkit-transition: visibility 0.4s ease-out;
+    -moz-transition: visibility 0.4s ease-out;
+    -ms-transition: visibility 0.4s ease-out;
+    -o-transition: visibility 0.4s ease-out;
+
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+#sliderTutorial {
+    width: 240px;
+    height: 519px;
+    margin: auto;
+    position:absolute;
+    text-align: center;
+    top: 100px;
+    box-shadow: 0px 12px 18px 0px rgba(113, 109, 110, 0.62);
+
+    transition: visibility 0.2s ease-in-out;
+    -webkit-transition: visibility 0.2s ease-in-out;
+    -moz-transition: visibility 0.2s ease-in-out;
+    -ms-transition: visibility 0.2s ease-in-out;
+    -o-transition: visibility 0.2s ease-in-out;
+
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+    
+}
+
+#headingTutorial {
+    margin:auto;
+    max-width: 340px;
+    font-size: 20px !important;
+    line-height: 24px !important;
+}
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+  max-height: 359px;
+  overflow: hidden;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 220px;
+  width: auto;
+  margin-top: -22px;
+  color: #D3D2D3;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+
+  transition: visibility 0s ease-out;
+  -webkit-transition: visibility 0s ease-out;
+  -moz-transition: visibility 0s ease-out;
+  -ms-transition: visibility 0s ease-out;
+  -o-transition: visibility 0s ease-out;
+}
+.prev {
+    left:0;
+    padding: 10px 10px 10px 5px;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+  padding: 10px 5px 10px 10px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.3);
+  color: #fff;
+}
+
+/* Caption text */
+.text {
+  color: #fff;
+  font-size: 16px;
+  padding: 8px 20px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: -110px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 24px;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+#dotsDiv {
+    background-color: #231F20;
+    height: 160px;
+    padding-top: 16px;
+    margin-top:-14px;
+}
+
+#dotsText #skipTutorial {
+    color: #BD9A65;
+    cursor:pointer;
+    margin-top: 80px;
+    font-size: 16px !important;
+    line-height: 24px; 
+    letter-spacing: 0.5px;
+
+}
+
+.dot {
+  cursor: pointer;
+  height: 13px;
+  width: 30px;
+  margin: 0 2px;
+  background-color: rgba(189, 154, 101, 0.5);
+  border-radius: 100px;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #BD9A65;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
