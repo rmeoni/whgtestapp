@@ -116,6 +116,14 @@ p {
     letter-spacing: 0.5px !important;
 }
 
+a::selection {
+    background: transparent;
+}
+
+a:focus {
+    background: transparent;
+}
+
 .nextQuestionButton {
     min-width: 187px;
     height: 46px;
