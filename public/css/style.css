@@ -377,6 +377,7 @@ lottie-player {
 
 /* Next & previous buttons */
 .prev, .next {
+  display:none;
   cursor: pointer;
   position: absolute;
   top: 220px;
