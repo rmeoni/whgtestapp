@@ -529,8 +529,8 @@ lottie-player {
 }
 
 #not-found-container {
-    height: 100vh;
-    background-image: url('public/images/404-image.png');
+    height: 60vh;
+    background-image: url('/public/images/404-image.png');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -542,7 +542,7 @@ lottie-player {
     margin-bottom: 40px;
 }
 
-#error-container h2 {
+#not-found-container h2 {
     opacity: 0.8 !important;
 }
 
