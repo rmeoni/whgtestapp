@@ -859,9 +859,6 @@ const displayProductsFiltered = (responseTest) => {
       //if Active, Active, toleranceLevel and Vegan
       }else if(objectValues.includes(responseTest[0]) && objectValues.includes(responseTest[1]) && objectValues.includes(responseTest[4]) && objectValues.includes(responseTest[5])) {
         renderProducts(products,i);
-      //if Active, Active, Vegan  
-      }else if(objectValues.includes(responseTest[0]) && objectValues.includes(responseTest[1]) && objectValues.includes(responseTest[5]) ){
-        renderProducts(products,i);
       }
     }
   };
