@@ -520,7 +520,7 @@ lottie-player {
   to {opacity: 1}
 }
 
-#404-container {
+#not-found-container {
     height: 100vh;
     background-image: url('public/images/404-image.png');
     background-position: center;
@@ -529,12 +529,12 @@ lottie-player {
     color: #fff !important;
 }
 
-#404-container h1 {
+#not-found-container h1 {
     margin-top: 40px;
     margin-bottom: 40px;
 }
 
-#404-container h2 {
+#error-container h2 {
     opacity: 0.8 !important;
 }
 
