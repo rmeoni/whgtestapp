@@ -530,11 +530,10 @@ lottie-player {
 
 #not-found-container {
     height: 60vh;
-    background-image: url('/public/images/404-image.png');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    color: #fff !important;
+    color: #231F20 !important;
 }
 
 #not-found-container h1 {
