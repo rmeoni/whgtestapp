@@ -12,7 +12,6 @@
 body {
     font-family: 'Montserrat', sans-serif !important;
     text-align: center;
-    overflow:hidden;
 }
 
 
@@ -150,6 +149,7 @@ p {
     padding-left: 12px;
     padding-right: 6px;
     max-width: 800px;
+    overflow:hidden;
 }
 
 #productsContainer .productDiv {
@@ -378,18 +378,19 @@ lottie-player {
 
 /* Next & previous buttons */
 .prev, .next {
-  display:none;
   cursor: pointer;
   position: absolute;
   top: 220px;
   width: auto;
   margin-top: -22px;
-  color: #D3D2D3;
+  color: transparent;
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
+  padding-top: 406px;
+  padding-left: 50px;
 
   transition: visibility 0s ease-out;
   -webkit-transition: visibility 0s ease-out;
@@ -399,21 +400,13 @@ lottie-player {
 }
 .prev {
     left:0;
-    padding: 10px 10px 10px 5px;
 }
 
 /* Position the "next button" to the right */
 .next {
   right: 0;
-  border-radius: 3px 0 0 3px;
-  padding: 10px 5px 10px 10px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.3);
-  color: #fff;
-}
 
 /* Caption text */
 .text {
