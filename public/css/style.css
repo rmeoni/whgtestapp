@@ -142,7 +142,6 @@ a:focus {
     letter-spacing: 0.5px;
     cursor: pointer;
     transition: background-color .4s;
-    margin-left: -6px;
 }
 
 .nextQuestionButton.activeButton {
