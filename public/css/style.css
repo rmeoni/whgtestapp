@@ -361,16 +361,12 @@ lottie-player {
     opacity: 0.99;
     background-color: #7B797B;
 
-    transition: visibility 0.4s ease-in-out;
-    -webkit-transition: visibility 0.4s ease-out;
-    -moz-transition: visibility 0.4s ease-out;
-    -ms-transition: visibility 0.4s ease-out;
-    -o-transition: visibility 0.4s ease-out;
+    transition: visibility 0.2s ease-out;
+    -webkit-transition: visibility 0.2s ease-out;
+    -moz-transition: visibility 0.2s ease-out;
+    -ms-transition: visibility 0.2s ease-out;
+    -o-transition: visibility 0.2s ease-out;
 
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
-    animation-name: fade;
-    animation-duration: 1.5s;
 }
 
 #sliderTutorial {
