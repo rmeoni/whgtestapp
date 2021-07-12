@@ -18,7 +18,7 @@ darkenBodyColor = ( ) => {
 
 const copyToClipboard = () => {
   const el = document.createElement('textarea');
-  el.value = 'http://try.windhillgrowers.com';
+  el.value = 'https://try.windhillgrowers.com';
   document.body.appendChild(el);
 
   el.select();
