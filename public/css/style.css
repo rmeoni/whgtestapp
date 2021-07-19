@@ -544,6 +544,10 @@ lottie-player {
 
 @media only screen and (max-width:768px) {
     #close {
-        display: none;
+        width: 80px;
+    }
+    #close img {
+        width: 25px;
+        transition: width 0.2s;
     }
 }
