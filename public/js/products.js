@@ -880,8 +880,4 @@ const displayProductsFiltered = (responseTest) => {
   console.log(`the suggestion is ${suggestion}`);
   document.querySelector('main').prepend(container);
 
-   //if there is only one product suggested remove right margin for the product div
-   if(suggestion.length < 2) {
-    document.querySelector('.productDiv').style.margin = '0px 0px 20px 0px';
-  }
 }

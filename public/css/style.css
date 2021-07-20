@@ -151,16 +151,16 @@ a:focus {
 
 #productsContainer {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     flex-direction: row;
     align-items: stretch;
     margin-bottom: 44px;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 12px;
-    padding-right: 6px;
-    max-width: 800px;
+    padding-left: 0px;
+    padding-right: 0px;
+    max-width: 552px;
     overflow:hidden;
 }
 
@@ -168,15 +168,11 @@ a:focus {
     width: 158px;
     border-radius: 2px;
     margin-bottom: 20px;
-    margin-right: 16px;
     background-color: #D3C2A7;
     /*box-shadow: 0px 2px 2px rgba(113, 109, 110, 0.15);*/
     box-shadow: 0px 4px 12px rgba(39, 44, 47, 0.1);
 }
 
-.singleProduct {
-    margin-right: 0px !important; 
-}
 
 .productImage {
     height: 208px;
@@ -553,5 +549,9 @@ lottie-player {
     #close img {
         width: 25px;
         transition: width 0.2s;
+    }
+
+    #productsContainer {
+        max-width: 376px;
     }
 }
