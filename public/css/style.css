@@ -174,6 +174,10 @@ a:focus {
     box-shadow: 0px 4px 12px rgba(39, 44, 47, 0.1);
 }
 
+.singleProduct {
+    margin-right: 0px !important; 
+}
+
 .productImage {
     height: 208px;
     overflow: hidden;
