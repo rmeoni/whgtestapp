@@ -933,7 +933,6 @@ const displayProductsFiltered = (responseTest) => {
         lottieScroll.setAttribute('id','lottieScroll');
         lottieScroll.setAttribute('class', 'lottie');
         lottieScroll.style.position = 'absolute';
-        lottieScroll.style.marginTop = '-46px';
         //lottieScroll.style.marginBottom = '10px';
         //productsContainer.style.marginBottom = '0px';
         lottieScroll.innerHTML = '<lottie-player src="https://assets9.lottiefiles.com/packages/lf20_3fniivoy.json" background="transparent"  speed="1"  style="width: 100px; height: 100px;" autoplay loop count="1"></lottie-player>';

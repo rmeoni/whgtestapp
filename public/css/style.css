@@ -301,6 +301,10 @@ lottie-player {
     top: -5vh;
 }
 
+#lottieScroll {
+    margin-top: -40px;
+}
+
 * {box-sizing:border-box}
 
 #overlay {
@@ -574,5 +578,9 @@ lottie-player {
         position: absolute;
         margin-left: 10vw;
         top: -5vh;
+    }
+    
+    #lottieScroll {
+        margin-top: -56px;
     }
 }
