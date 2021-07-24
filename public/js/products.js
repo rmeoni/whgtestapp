@@ -925,10 +925,16 @@ const displayProductsFiltered = (responseTest) => {
       document.querySelector("#productsContainer").style.padding = '0px';
 
     }
-    /*
-    //if suggestion is bigger than 2 add right margin
-    if(suggestion.length > 2) {
-      document.querySelector(".productDiv").style.marginRight = '12px';
-    }*/
 
+    //if there is an overflow append a lottie animation to indicate it's scrollable
+    if(productsContainer.scrollWidth > productsContainer.clientWidth) {
+      let lottieScroll = document.createElement('div');
+      lottieScroll.setAttribute('id','lottieScroll');
+      lottieScroll.setAttribute('class', 'lottie');
+      lottieScroll.style.position = 'absolute';
+      lottieScroll.style.marginTop = '-10px';
+      productsContainer.style.marginBottom = '0px';
+      lottieScroll.innerHTML = '<lottie-player src="https://assets9.lottiefiles.com/packages/lf20_3fniivoy.json" background="transparent"  speed="1"  style="width: 100px; height: 100px;" autoplay loop count="3"></lottie-player>';
+      container.appendChild(lottieScroll);
+    }
 }
