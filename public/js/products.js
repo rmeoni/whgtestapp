@@ -920,7 +920,7 @@ const displayProductsFiltered = (responseTest) => {
       document.querySelector("#productsContainer").style.maxWidth = '692px';
       document.querySelector("#productsContainer").style.padding = '0px';
 
-    }else if(suggestion.length === 5) {
+    }else {
       document.querySelector("#productsContainer").style.maxWidth = '862px';
       document.querySelector("#productsContainer").style.padding = '0px';
 
