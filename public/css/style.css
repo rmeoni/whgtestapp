@@ -303,6 +303,7 @@ lottie-player {
 
 #lottieScroll {
     margin-top: -36px;
+    right: 33vw;
 }
 
 * {box-sizing:border-box}
@@ -582,5 +583,6 @@ lottie-player {
     
     #lottieScroll {
         margin-top: -50px;
+        right: 40vw;
     }
 }
