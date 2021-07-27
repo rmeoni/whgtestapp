@@ -97,6 +97,25 @@ const questions = {
         
     },
     sixth: {
+        heading: "Which type of products are you interested in?",
+        paragraph: "",
+        options: {
+            a: {
+                text: 'THC only',
+                value: 'THC'
+            },
+            b: {
+                text: 'CBD only',
+                value: 'CBD',
+            },
+            c: {
+                text: 'Both THC and CBD',
+                value: 'Active'
+            },
+        },
+        button: ' ' 
+    },
+    seventh: {
         heading: "What's your age range?",
         paragraph: "(We ask this to give the best suggestion)",
         options: {
@@ -203,8 +222,7 @@ const response = ['Active'];
 const checkResponse = () => {
     if (questionIndex === 1){
         if (response[1] === 'Flower' || response[1] === 'Topicals') {
-            delete questions.fifth;
-            questionsNumbers.splice(4,1);
+            questionsNumbers.splice(4,2);
             console.log(questionsNumbers); 
         }
     }
