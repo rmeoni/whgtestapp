@@ -218,12 +218,14 @@ const removeChildren = (domElement) => {
 const nextQuestionButton = document.querySelector('.nextQuestionButton');
 const response = ['Active']; 
 
-//function to check if the response has a value of Edible or "All of the above" as a preference
+//function to shorten the amount of questions if the response is Flower or Topicals
 const checkResponse = () => {
     if (questionIndex === 1){
-        if (response[1] === 'Flower' || response[1] === 'Topicals') {
+        if (response[1] === 'Flower') {
+            questionsNumbers.splice(4,2); 
+        }else if (response[1] === 'Topicals'){
             questionsNumbers.splice(4,2);
-            console.log(questionsNumbers); 
+            console.log(questionsNumbers);
         }
     }
 }
