@@ -802,7 +802,7 @@ const displayProductsFiltered = (responseTest) => {
   const suggestion = [];
   
   //to sort the suggestion array of objects by cannabisType (Indica or Sativa first, then Hybrid)
-  function compare( a, b ) {
+  const compare = ( a, b ) => {
     if ( a.cannabisType < b.cannabisType ){
       return 1;
     }
@@ -854,13 +854,20 @@ const displayProductsFiltered = (responseTest) => {
   }else if(responseTest[1] === 'Edibles') {
     for(let i=0; i < products.length;i++) {
       let objectValues = Object.values(products[i]);
-      //if Active, Edibles, cannabisType, toleranceLevel and isVegan
-      if(objectValues.includes(responseTest[0]) && objectValues.includes(responseTest[1]) && objectValues.includes(responseTest[2]) && objectValues.includes(responseTest[4]) && objectValues.includes(responseTest[5]) ) {
+      //if Active, Edibles, cannabisType, toleranceLevel and isVegan and THC/CBD
+      if(objectValues.includes(responseTest[0]) && objectValues.includes(responseTest[1]) && objectValues.includes(responseTest[2]) && objectValues.includes(responseTest[4]) && objectValues.includes(responseTest[5]) && objectValues.includes(responseTest[6]) ) {
         sortSuggestion(products,i);
-        //if Active, Edibles, toleranceLevel, Hybrid and isVegan
-      }else if(objectValues.includes(responseTest[0]) && objectValues.includes(responseTest[1]) && objectValues.includes('Hybrid') && objectValues.includes(responseTest[4]) && objectValues.includes(responseTest[5])){
+      //if Active, Edibles, toleranceLevel, Hybrid and isVegan and THC/CBD
+      }else if(objectValues.includes(responseTest[0]) && objectValues.includes(responseTest[1]) && objectValues.includes('Hybrid') && objectValues.includes(responseTest[4]) && objectValues.includes(responseTest[5]) && objectValues.includes(responseTest[6])){
         sortSuggestion(products,i);
+      //if Active, Edibles, Hybrid, isVegan and CBD in the product && the response
       }
+      else if(objectValues.includes(responseTest[0]) && objectValues.includes(responseTest[1]) && objectValues.includes('Hybrid') && objectValues.includes(responseTest[5]) && objectValues.includes(responseTest[6]) && responseTest.includes('CBD')){
+        sortSuggestion(products,i);
+      //if Active, Edibles, Hybrid, isVegan and both THC and CBD in the response
+      }/*else if(objectValues.includes(responseTest[0]) && objectValues.includes(responseTest[1]) && objectValues.includes('Hybrid') && objectValues.includes(responseTest[5]) && responseTest[6].includes('Active') && objectValues.includes('CBD') ){
+        sortSuggestion(products,i);
+      }*/
     }renderProducts();
 
   }else if(responseTest[1] === 'Topicals') {
@@ -874,12 +881,21 @@ const displayProductsFiltered = (responseTest) => {
   }else if(responseTest[1] === 'Active') {
     for(let i=0; i < products.length;i++) {
       let objectValues = Object.values(products[i]);
-      //if Active, Active, cannabisType, toleranceLevel and Vegan
-      if(objectValues.includes(responseTest[0]) && objectValues.includes(responseTest[1]) && objectValues.includes(responseTest[2]) && objectValues.includes(responseTest[4]) && objectValues.includes(responseTest[5])) {
+      //if Active, Active, cannabisType, toleranceLevel and Vegan & THC/CBD
+      if(objectValues.includes(responseTest[0]) && objectValues.includes(responseTest[1]) && objectValues.includes(responseTest[2]) && objectValues.includes(responseTest[4]) && objectValues.includes(responseTest[5])&& objectValues.includes(responseTest[6])) {
         sortSuggestion(products,i);
-      //if Active, Active, toleranceLevel, Hybrid and Vegan
-      }else if(objectValues.includes(responseTest[0]) && objectValues.includes(responseTest[1]) && objectValues.includes('Hybrid') && objectValues.includes(responseTest[4]) && objectValues.includes(responseTest[5])) {
+      //if Active, Active, toleranceLevel, Hybrid and Vegan  & THC/CBD
+      }else if(objectValues.includes(responseTest[0]) && objectValues.includes(responseTest[1]) && objectValues.includes('Hybrid') && objectValues.includes(responseTest[4]) && objectValues.includes(responseTest[5]) && objectValues.includes(responseTest[6])) {
         sortSuggestion(products,i);
+      //if Active, Edibles, Hybrid, isVegan and CBD in the product && the response
+      }else if(objectValues.includes(responseTest[0]) && objectValues.includes(responseTest[1]) && objectValues.includes('Hybrid') && objectValues.includes(responseTest[5]) && objectValues.includes(responseTest[6]) && responseTest.includes('CBD')){
+        sortSuggestion(products,i);
+      //if Flower, Active, Cannabis Type & THC/CBD
+      }else if(objectValues.includes('Flower') && objectValues.includes(responseTest[0]) && objectValues.includes(responseTest[2]) && objectValues.includes(responseTest[6])) {
+        sortSuggestion(products,i)
+      //if Topicals, Active  and THC/CBD 
+      }else if(objectValues.includes('Topicals') && objectValues.includes(responseTest[0]) && objectValues.includes(responseTest[6])) {
+        sortSuggestion(products,i)
       }
     }renderProducts();
   };
@@ -933,8 +949,6 @@ const displayProductsFiltered = (responseTest) => {
         lottieScroll.setAttribute('id','lottieScroll');
         lottieScroll.setAttribute('class', 'lottie');
         lottieScroll.style.position = 'absolute';
-        //lottieScroll.style.marginBottom = '10px';
-        //productsContainer.style.marginBottom = '0px';
         lottieScroll.innerHTML = '<lottie-player src="https://assets9.lottiefiles.com/packages/lf20_3fniivoy.json" background="transparent"  speed="1"  style="width: 100px; height: 100px;" autoplay loop count="1"></lottie-player>';
         container.appendChild(lottieScroll);
       }

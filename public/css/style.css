@@ -48,7 +48,7 @@ h1 {
 
  h2 {
     font-weight: 700 !important;
-    color: #091D22;
+    color: #23201F;
     font-size: 28px !important;
     line-height: 36px !important;
     margin-top: 40px !important;
@@ -285,7 +285,7 @@ a:focus {
 .hurrayAnimation {
     width: 300px;
     height: 300px;
-    margin-left: auto;
+    margin-left: 15vw;
     margin-right: auto;
     top:200px;
     position: absolute;
@@ -297,7 +297,6 @@ a:focus {
 
 lottie-player {
     position: absolute;
-    margin-left: 10vw;
     top: -5vh;
 }
 
@@ -569,6 +568,9 @@ lottie-player {
         max-height: 100vh;
     }
 
+    .hurrayAnimation {
+        margin-left: 10vw;
+    }
 
     .emptyProductDiv {
         display: none;

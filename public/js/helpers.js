@@ -41,7 +41,7 @@ const addCopyToClip = () => {
 const hurrayAnimation = () => {
   let animation = document.createElement('section');
   animation.setAttribute('class','hurrayAnimation');
-  animation.innerHTML = '<lottie-player src="https://assets4.lottiefiles.com/packages/lf20_wXxy5o.json" background="transparent"  speed="1"  style="width: 300px; height: 300px;" autoplay></lottie-player>';
+  animation.innerHTML = '<lottie-player src="https://assets4.lottiefiles.com/packages/lf20_wXxy5o.json" background="transparent"  speed="1"  style="width: 300px; height: 300px;" autoplay ></lottie-player>';
   document.querySelector('#suggestionContainer').prepend(animation);
 }
 
