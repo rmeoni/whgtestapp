@@ -335,7 +335,11 @@ lottie-player {
 #logoTutorial {
     margin:auto;
     position: relative;
+<<<<<<< HEAD
     width: 80px;
+=======
+    width: 90px;
+>>>>>>> c3fad71cfb5506199bc5223f5d1a323e10e9809a
 }
 
 #bodyTutorial {
