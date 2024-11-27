@@ -368,6 +368,10 @@ lottie-player {
     opacity: 1;
 }
 
+#close img {
+    width: 24px;
+}
+
 #blurr {
     top:0;
     width: 100vw;
@@ -561,7 +565,7 @@ lottie-player {
         width: 80px;
     }
     #close img {
-        width: 25px;
+        width: 24px;
         transition: width 0.2s;
     }
 
