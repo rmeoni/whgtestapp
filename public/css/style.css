@@ -9,6 +9,7 @@
     src: url('../fonts/Montserrat/Montserrat-Regular.ttf');
     font-weight: 400;
 }
+
 body {
     font-family: 'Montserrat', sans-serif !important;
     text-align: center;
@@ -16,7 +17,7 @@ body {
 
 
 .header {
-    height:200px;
+    height: 200px;
     background-color: #231F20;
     text-align: center;
     display: flex;
@@ -24,7 +25,7 @@ body {
 
 
 #logo {
-    margin:auto;
+    margin: auto;
     position: relative;
 }
 
@@ -38,7 +39,7 @@ main {
 }
 
 #heading {
-    margin:auto;
+    margin: auto;
     max-width: 340px;
 }
 
@@ -46,7 +47,7 @@ h1 {
     font-weight: 700 !important;
 }
 
- h2 {
+h2 {
     font-weight: 700 !important;
     color: #23201F;
     font-size: 28px !important;
@@ -60,7 +61,7 @@ h1 {
     font-weight: 400;
     color: rgba(36, 23, 20, 0.4);
     font-size: 16px;
-    line-height: 24px; 
+    line-height: 24px;
     letter-spacing: -0.5px;
     display: block;
 }
@@ -69,7 +70,7 @@ h1 {
     font-weight: 400;
     color: rgba(36, 23, 20, 0.6);
     font-size: 16px;
-    line-height: 24px; 
+    line-height: 24px;
     letter-spacing: 0.5px;
     padding-left: 8px;
 
@@ -91,23 +92,25 @@ h1 {
     cursor: pointer;
 }
 
-[type="radio"]:not(:checked)+span:before, 
+[type="radio"]:not(:checked)+span:before,
 [type="radio"]:not(:checked)+span:after {
     border: 2px solid #7B7472 !important;
 }
 
 [type="radio"]:not(:checked)+span,
-[type="radio"]:checked+span  {
+[type="radio"]:checked+span {
     letter-spacing: 0.5px;
     font-size: 16px !important;
 }
 
-[type="radio"]:checked+span:after, 
+[type="radio"]:checked+span:after,
 [type="radio"].with-gap:checked+span:after {
     background-color: #BD9A65 !important;
 }
-[type="radio"]:checked+span:after, 
-[type="radio"].with-gap:checked+span:before, [type="radio"].with-gap:checked+span:after {
+
+[type="radio"]:checked+span:after,
+[type="radio"].with-gap:checked+span:before,
+[type="radio"].with-gap:checked+span:after {
     border: 2px solid #BD9A65 !important;
 }
 
@@ -188,7 +191,7 @@ a:focus {
 }
 
 .productImage img {
-    height:240px;
+    height: 240px;
 }
 
 .productText {
@@ -204,7 +207,7 @@ a:focus {
     letter-spacing: 0.5px !important;
     padding: 8px;
     /*height: 88px;*/
- 
+
 }
 
 #image-label {
@@ -231,9 +234,9 @@ a:focus {
 #footer {
     height: 220px;
     background-color: #231F20;
-    padding-top:60px !important;
+    padding-top: 60px !important;
     padding-bottom: 60px !important;
-    margin:auto;
+    margin: auto;
     display: flex;
     justify-content: center;
 }
@@ -247,6 +250,7 @@ a:focus {
     justify-content: center;
     text-align: center;
 }
+
 #footer ul {
     list-style-type: none;
     margin-bottom: 16px;
@@ -255,6 +259,7 @@ a:focus {
 #footer ul li {
     display: inline-block;
 }
+
 #footer ul li a {
     transition: opacity .3s;
 }
@@ -266,8 +271,8 @@ a:focus {
 #footer a {
     color: #BD9A65;
     text-decoration: none;
-    margin-top: 16px; 
-    transition: opacity .3s;  
+    margin-top: 16px;
+    transition: opacity .3s;
 }
 
 #footer a:hover {
@@ -287,7 +292,7 @@ a:focus {
     height: 300px;
     margin-left: 15vw;
     margin-right: auto;
-    top:200px;
+    top: 200px;
     position: absolute;
     display: flex;
     z-index: 2;
@@ -305,7 +310,9 @@ lottie-player {
     right: 33vw;
 }
 
-* {box-sizing:border-box}
+* {
+    box-sizing: border-box
+}
 
 #overlay {
     position: absolute;
@@ -324,7 +331,7 @@ lottie-player {
 
 
 .headerTutorial {
-    height:100px;
+    height: 100px;
     width: 240px;
     background-color: #231F20;
     text-align: center;
@@ -333,7 +340,7 @@ lottie-player {
 }
 
 #logoTutorial {
-    margin:auto;
+    margin: auto;
     position: relative;
     width: 100px;
 }
@@ -342,6 +349,7 @@ lottie-player {
     height: 406px;
     background-color: #fff;
 }
+
 #close {
     width: 100px;
     position: absolute;
@@ -373,7 +381,7 @@ lottie-player {
 }
 
 #blurr {
-    top:0;
+    top: 0;
     width: 100vw;
     min-height: 100vh;
     opacity: 0.99;
@@ -391,7 +399,7 @@ lottie-player {
     width: 240px;
     height: 519px;
     margin: auto;
-    position:absolute;
+    position: absolute;
     text-align: center;
     top: 15%;
     box-shadow: 0px 12px 18px 0px rgba(113, 109, 110, 0.62);
@@ -406,84 +414,87 @@ lottie-player {
     -webkit-animation-duration: 1.5s;
     animation-name: fade;
     animation-duration: 1.5s;
-    
+
 }
 
 #headingTutorial {
-    margin:auto;
+    margin: auto;
     max-width: 340px;
     font-size: 20px !important;
     line-height: 24px !important;
 }
+
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
 }
 
 /* Hide the images by default */
 .mySlides {
-  display: none;
-  max-height: 359px;
-  overflow: hidden;
+    display: none;
+    max-height: 359px;
+    overflow: hidden;
 }
 
 /* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 120px;
-  width: auto;
-  margin-top: -22px;
-  color: transparent;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  padding-top: 250px;
-  padding-left: 50px;
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 120px;
+    width: auto;
+    margin-top: -22px;
+    color: transparent;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    padding-top: 250px;
+    padding-left: 50px;
 
-  transition: visibility 0s ease-out;
-  -webkit-transition: visibility 0s ease-out;
-  -moz-transition: visibility 0s ease-out;
-  -ms-transition: visibility 0s ease-out;
-  -o-transition: visibility 0s ease-out;
+    transition: visibility 0s ease-out;
+    -webkit-transition: visibility 0s ease-out;
+    -moz-transition: visibility 0s ease-out;
+    -ms-transition: visibility 0s ease-out;
+    -o-transition: visibility 0s ease-out;
 }
+
 .prev {
-    left:0;
+    left: 0;
 }
 
 /* Position the "next button" to the right */
 .next {
-  right: 0;
+    right: 0;
 }
 
 
 /* Caption text */
 .text {
-  color: #fff;
-  font-size: 16px;
-  padding: 8px 20px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-  margin-bottom: -110px;
-  text-transform: uppercase;
-  font-weight: 700;
-  letter-spacing: 2px;
-  line-height: 24px;
+    color: #fff;
+    font-size: 16px;
+    padding: 8px 20px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: -110px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 24px;
 }
 
 /* Number text (1/3 etc) */
 .numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
 }
 
 /* The dots/bullets/indicators */
@@ -491,55 +502,66 @@ lottie-player {
     background-color: #231F20;
     height: 160px;
     padding-top: 16px;
-    margin-top:-14px;
+    margin-top: -14px;
 }
 
 #dotsText #skipTutorial {
     color: #BD9A65;
-    cursor:pointer;
+    cursor: pointer;
     margin-top: 80px;
     font-size: 16px !important;
-    line-height: 24px; 
+    line-height: 24px;
     letter-spacing: 0.5px;
     transition: opacity .3s;
 
 }
 
 #dotsText #skipTutorial:hover {
-    opacity:0.8;
+    opacity: 0.8;
 }
 
 .dot {
-  cursor: pointer;
-  height: 13px;
-  width: 30px;
-  margin: 0 2px;
-  background-color: rgba(189, 154, 101, 0.5);
-  border-radius: 100px;
-  display: inline-block;
-  transition: background-color 0.6s ease;
+    cursor: pointer;
+    height: 13px;
+    width: 30px;
+    margin: 0 2px;
+    background-color: rgba(189, 154, 101, 0.5);
+    border-radius: 100px;
+    display: inline-block;
+    transition: background-color 0.6s ease;
 }
 
-.active, .dot:hover {
-  background-color: #BD9A65;
+.active,
+.dot:hover {
+    background-color: #BD9A65;
 }
 
 /* Fading animation */
 .fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
 }
 
 @-webkit-keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
 }
 
 @keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
 }
 
 #not-found-container {
@@ -564,6 +586,7 @@ lottie-player {
     #close {
         width: 80px;
     }
+
     #close img {
         width: 24px;
         transition: width 0.2s;
@@ -580,14 +603,14 @@ lottie-player {
     .emptyProductDiv {
         display: none;
     }
-    
+
 
     lottie-player {
         position: absolute;
         margin-left: 10vw;
         top: -5vh;
     }
-    
+
     #lottieScroll {
         margin-top: -50px;
         right: 40vw;

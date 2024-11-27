@@ -1,71 +1,76 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Product Tester - Wind Hill Growers</title>
-        <meta property="og:image" content="https://static1.squarespace.com/static/5d75b54c4dfe9640d656e9ad/t/60e8ab83aea6c4457b8cf3c8/1625860996182/whg-product-mockup.png">
-<meta property="og:description" content="The product tester app will help you get a personalized recommendation of our products based on your preferences.">
-<meta property="og:title" content="Product Tester - Wind Hill Growers">
-        <link rel="icon" href="public/images/icon-web.png">
-        <link rel="stylesheet" type="text/css" href="public/css/style.css">
-        <link rel="stylesheet" type="text/css" href="public/css/reset.css">
-        <link rel="stylesheet" type="text/css" href="public/css/materialize.min.css">
-        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-        <!--mobile friendly-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div class="header">
-            <a href="" id="logo"><img src="public/images/logo-small.svg" style="max-width:220px;min-width:160px" aria-label="home"></a>
-        </div> 
-        <main>
-            <!-- questions to be rendered trough main.js-->
-        </main>
-        <button class="nextQuestionButton">Next Question</button>
-            <!-- the instructions guide at the beginning of the app-->
-        <div id = "overlay">
-            <div id="close" class="fade"><img onclick="hideOverlay()" src="public/images/icon-close.svg"/></div>
-            <div id="blurr" onclick="hideOverlay()"></div>
-            <div id="sliderTutorial">
-                <!-- Slideshow container -->
-                <div class="slideshow-container">
+
+<head>
+    <title>Product Tester - Wind Hill Growers</title>
+    <meta property="og:image"
+        content="https://static1.squarespace.com/static/5d75b54c4dfe9640d656e9ad/t/60e8ab83aea6c4457b8cf3c8/1625860996182/whg-product-mockup.png">
+    <meta property="og:description"
+        content="The product tester app will help you get a personalized recommendation of our products based on your preferences.">
+    <meta property="og:title" content="Product Tester - Wind Hill Growers">
+    <link rel="icon" href="public/images/icon-web.png">
+    <link rel="stylesheet" type="text/css" href="public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="public/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="public/css/materialize.min.css">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <!--mobile friendly-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="header">
+        <a href="" id="logo"><img src="public/images/logo-small.svg" style="max-width:220px;min-width:160px"
+                aria-label="home"></a>
+    </div>
+    <main>
+        <!-- questions to be rendered trough main.js-->
+    </main>
+    <button class="nextQuestionButton">Next Question</button>
+    <!-- the instructions guide at the beginning of the app-->
+    <div id="overlay">
+        <div id="close" class="fade"><img onclick="hideOverlay()" src="public/images/icon-close.svg" /></div>
+        <div id="blurr" onclick="hideOverlay()"></div>
+        <div id="sliderTutorial">
+            <!-- Slideshow container -->
+            <div class="slideshow-container">
 
                 <!-- Full-width images with number and caption text -->
                 <div class="mySlides fade">
                     <div class="headerTutorial fade">
-                    <img src="public/images/logo-small.svg" aria-label="home" id="logoTutorial">
-                    </div> 
-                    <div id="bodyTutorial">
-                        <img src="public/images/product-images/step-1.svg" width="220px"/>
+                        <img src="public/images/logo-small.svg" aria-label="home" id="logoTutorial">
                     </div>
-                <div class="text">Tell us about you</div>
+                    <div id="bodyTutorial">
+                        <img src="public/images/product-images/step-1.svg" width="220px" />
+                    </div>
+                    <div class="text">Tell us about you</div>
                 </div>
-            
+
                 <div class="mySlides fade">
                     <div class="headerTutorial">
                         <img src="public/images/logo-small.svg" aria-label="logo" id="logoTutorial">
-                    </div> 
-                    <div id="bodyTutorial">
-                        <img src="public/images/product-images/step-2.svg" width="220px"/>
                     </div>
-                <div class="text">Get the best suggestion</div>
+                    <div id="bodyTutorial">
+                        <img src="public/images/product-images/step-2.svg" width="220px" />
+                    </div>
+                    <div class="text">Get the best suggestion</div>
                 </div>
-            
-                <div class="mySlides fade"> 
+
+                <div class="mySlides fade">
                     <div class="headerTutorial">
                         <img src="public/images/logo-small.svg" aria-label="logo" id="logoTutorial">
-                    </div> 
-                    <div id="bodyTutorial">
-                        <img src="public/images/product-images/step-3.png" width="220px"/>
                     </div>
-                <div class="text">share it with your friends</div>
+                    <div id="bodyTutorial">
+                        <img src="public/images/product-images/step-3.png" width="220px" />
+                    </div>
+                    <div class="text">share it with your friends</div>
                 </div>
-            
+
                 <!-- Next and previous buttons -->
                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
             </div>
             <br>
-            
+
             <!-- The dots/circles -->
             <div style="text-align:center" id="dotsDiv">
                 <span class="dot" onclick="currentSlide(1)"></span>
@@ -74,25 +79,30 @@
                 <div id="dotsText">
                     <p onclick="hideOverlay()" id="skipTutorial">Skip Tutorial</p>
                 </div>
-            </div>    
             </div>
         </div>
-        <div id ="footer">
-            <div id="footer-container">
-                <ul>
-                    <li><a href="https://www.facebook.com/windhillgrowers" target="_blank"><img src="public/images/icon-facebook.svg" aria-label="facebook"></a></li>
-                    <li><a href="https://www.instagram.com/windhillgrowers" target="_blank"><img src="public/images/icon-instagram.svg" aria-label="instagram"></a></li>
-                    <li><a href="https://www.youtube.com/channel/UCpzsHJMMOc_6ZrCWdC8OWdA" target="_blank"><img src="public/images/icon-youtube.svg" aria-label="youtube"></a></li>
-                </ul>
-                <a href="https://www.windhillgrowers.com" target="_blank">www.windhillgrowers.com</a>
-                <p>© 2021 THE HINTERLANDS, MAINE 
-                    <br>(WITH A TOUCH OF GERMANY)</p>
-            </div>
-            
+    </div>
+    <div id="footer">
+        <div id="footer-container">
+            <ul>
+                <li><a href="https://www.facebook.com/windhillgrowers" target="_blank"><img
+                            src="public/images/icon-facebook.svg" aria-label="facebook"></a></li>
+                <li><a href="https://www.instagram.com/windhillgrowers" target="_blank"><img
+                            src="public/images/icon-instagram.svg" aria-label="instagram"></a></li>
+                <li><a href="https://www.youtube.com/channel/UCpzsHJMMOc_6ZrCWdC8OWdA" target="_blank"><img
+                            src="public/images/icon-youtube.svg" aria-label="youtube"></a></li>
+            </ul>
+            <a href="https://www.windhillgrowers.com" target="_blank">www.windhillgrowers.com</a>
+            <p>© 2021 THE HINTERLANDS, MAINE
+                <br>(WITH A TOUCH OF GERMANY)
+            </p>
         </div>
-        <script src="public/js/main.js"></script>
-        <script src="public/js/helpers.js"></script>
-        <script src="public/js/products.js"></script>
-        <script src="public/js/materialize.min.js"></script>
-    </body>
-</html> 
+
+    </div>
+    <script src="public/js/main.js"></script>
+    <script src="public/js/helpers.js"></script>
+    <script src="public/js/products.js"></script>
+    <script src="public/js/materialize.min.js"></script>
+</body>
+
+</html>

@@ -1,16 +1,16 @@
 //function to display hide the footer
 const hideFooter = () => {
-    document.getElementById('footer').style.display = 'none';  
+  document.getElementById('footer').style.display = 'none';
 }
 
 hideFooter();
 
 //function to show the footer
 const insertFooter = () => {
-   document.getElementById('footer').style.display = 'block';
+  document.getElementById('footer').style.display = 'block';
 }
 
-darkenBodyColor = ( ) => {
+darkenBodyColor = () => {
   document.querySelector('body').style.background = '#F5F7FA';
 }
 
@@ -22,7 +22,7 @@ const copyToClipboard = () => {
   document.body.appendChild(el);
 
   el.select();
-  el.setSelectionRange(0,99999); //For mobile devices
+  el.setSelectionRange(0, 99999); //For mobile devices
 
   document.execCommand('copy');
   document.body.removeChild(el);
@@ -40,7 +40,7 @@ const addCopyToClip = () => {
 //celebratory animation display
 const hurrayAnimation = () => {
   let animation = document.createElement('section');
-  animation.setAttribute('class','hurrayAnimation');
+  animation.setAttribute('class', 'hurrayAnimation');
   animation.innerHTML = '<lottie-player src="https://assets4.lottiefiles.com/packages/lf20_wXxy5o.json" background="transparent"  speed="1"  style="width: 300px; height: 300px;" autoplay ></lottie-player>';
   document.querySelector('#suggestionContainer').prepend(animation);
 }
@@ -69,14 +69,14 @@ function showSlides(n) {
   var i;
   var slides = document.getElementsByClassName("mySlides");
   var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
   for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
+    slides[i].style.display = "none";
   }
   for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
+    dots[i].className = dots[i].className.replace(" active", "");
   }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
 }

@@ -780,132 +780,132 @@ let products = [
     "imgURL": "DocTemplates_ItemImage_2356153000000616093.png",
     "salesDescription": "Traditional and toothsome German gummies for your adult taste buds. 10 pieces with 20mg each of our own potent sun-grown cannabis oil per package."
   }
- ];
+];
 
 
 //the product filter logic
 const displayProductsFiltered = (responseTest) => {
   //the heading of the recommendation
   const container = document.createElement('section');
-  container.setAttribute('id','suggestionContainer');
+  container.setAttribute('id', 'suggestionContainer');
 
   let header = document.createElement('h2');
-  header.setAttribute('id','heading');
+  header.setAttribute('id', 'heading');
   header.innerText = 'Our recommendation to YOU!';
   container.appendChild(header);
 
 
   const productsContainer = document.createElement('div');
-  productsContainer.setAttribute('id','productsContainer');
-  productsContainer.setAttribute('class','flex-container');
+  productsContainer.setAttribute('id', 'productsContainer');
+  productsContainer.setAttribute('class', 'flex-container');
   container.appendChild(productsContainer);
   const suggestion = [];
-  
+
   //to sort the suggestion array of objects by cannabisType (Indica or Sativa first, then Hybrid)
-  const compare = ( a, b ) => {
-    if ( a.cannabisType < b.cannabisType ){
+  const compare = (a, b) => {
+    if (a.cannabisType < b.cannabisType) {
       return 1;
     }
-    if ( a.cannabisType > b.cannabisType ){
+    if (a.cannabisType > b.cannabisType) {
       return -1;
     }
     return 0;
   }
 
   const sortSuggestion = (products, i) => {
-    suggestion.push({'itemName': products[i].itemName, 'imgURL': products[i].imgURL, 'cannabisType' : products[i].cannabisType });
+    suggestion.push({ 'itemName': products[i].itemName, 'imgURL': products[i].imgURL, 'cannabisType': products[i].cannabisType });
     suggestion.sort(compare)
   }
-  
+
   //the rendering of matched products
   const renderProducts = () => {
-    for(let i=0; i < suggestion.length; i++) {
+    for (let i = 0; i < suggestion.length; i++) {
       let objectValues = Object.values(suggestion[i]);
       let productDiv = document.createElement('div');
-      productDiv.setAttribute('class','productDiv');
+      productDiv.setAttribute('class', 'productDiv');
 
-         
+
       let productImage = document.createElement('div');
-      productImage.setAttribute('class','productImage');
-      productImage.innerHTML = `<img src="public/images/product-images/${suggestion[i].imgURL}" alt="${suggestion[i].itemName.replaceAll(/\/|-/ig,' ')}" aria-label="${suggestion[i].itemName.replaceAll(/\/|-/ig,' ')} ${suggestion[i].cannabisType}" />`;
+      productImage.setAttribute('class', 'productImage');
+      productImage.innerHTML = `<img src="public/images/product-images/${suggestion[i].imgURL}" alt="${suggestion[i].itemName.replaceAll(/\/|-/ig, ' ')}" aria-label="${suggestion[i].itemName.replaceAll(/\/|-/ig, ' ')} ${suggestion[i].cannabisType}" />`;
       productDiv.appendChild(productImage);
-  
+
       let productText = document.createElement('div');
-      productText.setAttribute('class','productText');
-      productText.innerHTML = `<p id="image-label">${suggestion[i].cannabisType}</p> <p>${suggestion[i].itemName.replaceAll(/\/|-/ig,' ')}</p>` ;
+      productText.setAttribute('class', 'productText');
+      productText.innerHTML = `<p id="image-label">${suggestion[i].cannabisType}</p> <p>${suggestion[i].itemName.replaceAll(/\/|-/ig, ' ')}</p>`;
       productDiv.appendChild(productText);
-      
+
       productsContainer.appendChild(productDiv);
       //adding an extra div if the suggestion is not divisible by 3, to fix the spacing
-    }if ((suggestion.length % 3) != 0 && suggestion.length != 1 && suggestion.length != 2) {
+    } if ((suggestion.length % 3) != 0 && suggestion.length != 1 && suggestion.length != 2) {
       let productDiv = document.createElement('div');
       productDiv.setAttribute('class', 'emptyProductDiv');
       productsContainer.appendChild(productDiv);
     }
   }
-  
-  if(responseTest[1] === 'Flower'){
-    for(let i=0; i < products.length;i++) {
+
+  if (responseTest[1] === 'Flower') {
+    for (let i = 0; i < products.length; i++) {
       let objectValues = Object.values(products[i]);
-      if(objectValues.includes(responseTest[0]) && objectValues.includes(responseTest[1]) && objectValues.includes(responseTest[2])) {
-        sortSuggestion(products,i)
+      if (objectValues.includes(responseTest[0]) && objectValues.includes(responseTest[1]) && objectValues.includes(responseTest[2])) {
+        sortSuggestion(products, i)
       }
-    }renderProducts();
-  }else if(responseTest[1] === 'Edibles') {
-    for(let i=0; i < products.length;i++) {
+    } renderProducts();
+  } else if (responseTest[1] === 'Edibles') {
+    for (let i = 0; i < products.length; i++) {
       let objectValues = Object.values(products[i]);
       //if Active, Edibles, cannabisType, toleranceLevel and isVegan and THC/CBD
-      if(objectValues.includes(responseTest[0]) && objectValues.includes(responseTest[1]) && objectValues.includes(responseTest[2]) && objectValues.includes(responseTest[4]) && objectValues.includes(responseTest[5]) && objectValues.includes(responseTest[6]) ) {
-        sortSuggestion(products,i);
-      //if Active, Edibles, toleranceLevel, Hybrid and isVegan and THC/CBD
-      }else if(objectValues.includes(responseTest[0]) && objectValues.includes(responseTest[1]) && objectValues.includes('Hybrid') && objectValues.includes(responseTest[4]) && objectValues.includes(responseTest[5]) && objectValues.includes(responseTest[6])){
-        sortSuggestion(products,i);
-      //if Active, Edibles, Hybrid, isVegan and CBD in the product && the response
+      if (objectValues.includes(responseTest[0]) && objectValues.includes(responseTest[1]) && objectValues.includes(responseTest[2]) && objectValues.includes(responseTest[4]) && objectValues.includes(responseTest[5]) && objectValues.includes(responseTest[6])) {
+        sortSuggestion(products, i);
+        //if Active, Edibles, toleranceLevel, Hybrid and isVegan and THC/CBD
+      } else if (objectValues.includes(responseTest[0]) && objectValues.includes(responseTest[1]) && objectValues.includes('Hybrid') && objectValues.includes(responseTest[4]) && objectValues.includes(responseTest[5]) && objectValues.includes(responseTest[6])) {
+        sortSuggestion(products, i);
+        //if Active, Edibles, Hybrid, isVegan and CBD in the product && the response
       }
-      else if(objectValues.includes(responseTest[0]) && objectValues.includes(responseTest[1]) && objectValues.includes('Hybrid') && objectValues.includes(responseTest[5]) && objectValues.includes(responseTest[6]) && responseTest.includes('CBD')){
-        sortSuggestion(products,i);
-      //if Active, Edibles, Hybrid, isVegan and both THC and CBD in the response
+      else if (objectValues.includes(responseTest[0]) && objectValues.includes(responseTest[1]) && objectValues.includes('Hybrid') && objectValues.includes(responseTest[5]) && objectValues.includes(responseTest[6]) && responseTest.includes('CBD')) {
+        sortSuggestion(products, i);
+        //if Active, Edibles, Hybrid, isVegan and both THC and CBD in the response
       }/*else if(objectValues.includes(responseTest[0]) && objectValues.includes(responseTest[1]) && objectValues.includes('Hybrid') && objectValues.includes(responseTest[5]) && responseTest[6].includes('Active') && objectValues.includes('CBD') ){
         sortSuggestion(products,i);
       }*/
-    }renderProducts();
+    } renderProducts();
 
-  }else if(responseTest[1] === 'Topicals') {
-    for(let i=0; i < products.length;i++) {
+  } else if (responseTest[1] === 'Topicals') {
+    for (let i = 0; i < products.length; i++) {
       let objectValues = Object.values(products[i]);
       //if Active and Topicals
-      if(objectValues.includes(responseTest[0])&& objectValues.includes(responseTest[1])) {
-        sortSuggestion(products,i);
+      if (objectValues.includes(responseTest[0]) && objectValues.includes(responseTest[1])) {
+        sortSuggestion(products, i);
       }
-    }renderProducts();
-  }else if(responseTest[1] === 'Active') {
-    for(let i=0; i < products.length;i++) {
+    } renderProducts();
+  } else if (responseTest[1] === 'Active') {
+    for (let i = 0; i < products.length; i++) {
       let objectValues = Object.values(products[i]);
       //if Active, Active, cannabisType, toleranceLevel and Vegan & THC/CBD
-      if(objectValues.includes(responseTest[0]) && objectValues.includes(responseTest[1]) && objectValues.includes(responseTest[2]) && objectValues.includes(responseTest[4]) && objectValues.includes(responseTest[5])&& objectValues.includes(responseTest[6])) {
-        sortSuggestion(products,i);
-      //if Active, Active, toleranceLevel, Hybrid and Vegan  & THC/CBD
-      }else if(objectValues.includes(responseTest[0]) && objectValues.includes(responseTest[1]) && objectValues.includes('Hybrid') && objectValues.includes(responseTest[4]) && objectValues.includes(responseTest[5]) && objectValues.includes(responseTest[6])) {
-        sortSuggestion(products,i);
-      //if Active, Edibles, Hybrid, isVegan and CBD in the product && the response
-      }else if(objectValues.includes(responseTest[0]) && objectValues.includes(responseTest[1]) && objectValues.includes('Hybrid') && objectValues.includes(responseTest[5]) && objectValues.includes(responseTest[6]) && responseTest.includes('CBD')){
-        sortSuggestion(products,i);
-      //if Flower, Active, Cannabis Type & THC/CBD
-      }else if(objectValues.includes('Flower') && objectValues.includes(responseTest[0]) && objectValues.includes(responseTest[2]) && objectValues.includes(responseTest[6])) {
-        sortSuggestion(products,i)
-      //if Topicals, Active  and THC/CBD 
-      }else if(objectValues.includes('Topicals') && objectValues.includes(responseTest[0]) && objectValues.includes(responseTest[6])) {
-        sortSuggestion(products,i)
+      if (objectValues.includes(responseTest[0]) && objectValues.includes(responseTest[1]) && objectValues.includes(responseTest[2]) && objectValues.includes(responseTest[4]) && objectValues.includes(responseTest[5]) && objectValues.includes(responseTest[6])) {
+        sortSuggestion(products, i);
+        //if Active, Active, toleranceLevel, Hybrid and Vegan  & THC/CBD
+      } else if (objectValues.includes(responseTest[0]) && objectValues.includes(responseTest[1]) && objectValues.includes('Hybrid') && objectValues.includes(responseTest[4]) && objectValues.includes(responseTest[5]) && objectValues.includes(responseTest[6])) {
+        sortSuggestion(products, i);
+        //if Active, Edibles, Hybrid, isVegan and CBD in the product && the response
+      } else if (objectValues.includes(responseTest[0]) && objectValues.includes(responseTest[1]) && objectValues.includes('Hybrid') && objectValues.includes(responseTest[5]) && objectValues.includes(responseTest[6]) && responseTest.includes('CBD')) {
+        sortSuggestion(products, i);
+        //if Flower, Active, Cannabis Type & THC/CBD
+      } else if (objectValues.includes('Flower') && objectValues.includes(responseTest[0]) && objectValues.includes(responseTest[2]) && objectValues.includes(responseTest[6])) {
+        sortSuggestion(products, i)
+        //if Topicals, Active  and THC/CBD 
+      } else if (objectValues.includes('Topicals') && objectValues.includes(responseTest[0]) && objectValues.includes(responseTest[6])) {
+        sortSuggestion(products, i)
       }
-    }renderProducts();
+    } renderProducts();
   };
 
   //If there was no suggestion render the sorry text
-  if(suggestion.length < 1) {
+  if (suggestion.length < 1) {
     let sorryDiv = document.createElement('div');
-    sorryDiv.setAttribute('id','sorryDiv');
+    sorryDiv.setAttribute('id', 'sorryDiv');
     let sorryText = document.createElement('p');
-    sorryDiv.setAttribute('id','sorryText');
+    sorryDiv.setAttribute('id', 'sorryText');
     sorryText.innerText = "We are truly sorry but we couldn't find a product to recommend you based on your response. Please try again.";
 
     sorryDiv.appendChild(sorryText);
@@ -913,46 +913,46 @@ const displayProductsFiltered = (responseTest) => {
     console.log("no recommendation");
   }
 
-  for(let i= 0; i < suggestion.length;i++) {
+  for (let i = 0; i < suggestion.length; i++) {
     console.log(`the suggestion is ${suggestion[i].cannabisType}`);
   }
   document.querySelector('main').prepend(container);
 
-    //Fixing the spacing for the products showned according to the suggestion length, so it's always centered
-    if(suggestion.length === 1){
-      document.querySelector("#productsContainer").style.maxWidth = '158px';
-      document.querySelector("#productsContainer").style.overflow = 'hidden';
-      document.querySelector("#productsContainer").style.padding = '0px';
-      document.querySelector('.productDiv').style.marginRight = '0px';
-    }else if(suggestion.length === 2){
-      document.querySelector("#productsContainer").style.maxWidth = '352px';
-      document.querySelector("#productsContainer").style.overflow = 'hidden';
-      document.querySelector("#productsContainer").style.padding = '0px';
-    } else if(suggestion.length === 3) {
-      document.querySelector("#productsContainer").style.maxWidth = '522px';
-      document.querySelector("#productsContainer").style.padding = '0px';
+  //Fixing the spacing for the products showned according to the suggestion length, so it's always centered
+  if (suggestion.length === 1) {
+    document.querySelector("#productsContainer").style.maxWidth = '158px';
+    document.querySelector("#productsContainer").style.overflow = 'hidden';
+    document.querySelector("#productsContainer").style.padding = '0px';
+    document.querySelector('.productDiv').style.marginRight = '0px';
+  } else if (suggestion.length === 2) {
+    document.querySelector("#productsContainer").style.maxWidth = '352px';
+    document.querySelector("#productsContainer").style.overflow = 'hidden';
+    document.querySelector("#productsContainer").style.padding = '0px';
+  } else if (suggestion.length === 3) {
+    document.querySelector("#productsContainer").style.maxWidth = '522px';
+    document.querySelector("#productsContainer").style.padding = '0px';
 
-    }else if(suggestion.length === 4) {
-      document.querySelector("#productsContainer").style.maxWidth = '692px';
-      document.querySelector("#productsContainer").style.padding = '0px';
+  } else if (suggestion.length === 4) {
+    document.querySelector("#productsContainer").style.maxWidth = '692px';
+    document.querySelector("#productsContainer").style.padding = '0px';
 
-    }else{
-      document.querySelector("#productsContainer").style.maxWidth = '862px';
-      document.querySelector("#productsContainer").style.padding = '0px';
+  } else {
+    document.querySelector("#productsContainer").style.maxWidth = '862px';
+    document.querySelector("#productsContainer").style.padding = '0px';
 
+  }
+
+  //if there is an overflow append a lottie animation to indicate it's scrollable
+  const horizontalAnimation = () => {
+    if (productsContainer.scrollWidth > productsContainer.clientWidth) {
+      let lottieScroll = document.createElement('div');
+      lottieScroll.setAttribute('id', 'lottieScroll');
+      lottieScroll.setAttribute('class', 'lottie');
+      lottieScroll.style.position = 'absolute';
+      lottieScroll.innerHTML = '<lottie-player src="https://assets9.lottiefiles.com/packages/lf20_3fniivoy.json" background="transparent"  speed="1"  style="width: 100px; height: 100px;" autoplay loop count="1"></lottie-player>';
+      container.appendChild(lottieScroll);
     }
+  }
 
-    //if there is an overflow append a lottie animation to indicate it's scrollable
-    const horizontalAnimation = () => {
-      if(productsContainer.scrollWidth > productsContainer.clientWidth) {
-        let lottieScroll = document.createElement('div');
-        lottieScroll.setAttribute('id','lottieScroll');
-        lottieScroll.setAttribute('class', 'lottie');
-        lottieScroll.style.position = 'absolute';
-        lottieScroll.innerHTML = '<lottie-player src="https://assets9.lottiefiles.com/packages/lf20_3fniivoy.json" background="transparent"  speed="1"  style="width: 100px; height: 100px;" autoplay loop count="1"></lottie-player>';
-        container.appendChild(lottieScroll);
-      }
-    }
-
-    setTimeout(horizontalAnimation, 2000);
+  setTimeout(horizontalAnimation, 2000);
 }

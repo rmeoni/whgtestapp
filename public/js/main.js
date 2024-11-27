@@ -1,7 +1,7 @@
 //questions object
 const questions = {
     first: {
-        heading :'How do you prefer using cannabis?',
+        heading: 'How do you prefer using cannabis?',
         paragraph: '',
         options: {
             a: {
@@ -39,7 +39,7 @@ const questions = {
                 text: 'Sleeping',
                 value: 'Indica'
             },
-            d: {    
+            d: {
                 text: 'All of the above',
                 value: 'Active'
             }
@@ -94,7 +94,7 @@ const questions = {
             },
         },
         button: ' '
-        
+
     },
     sixth: {
         heading: "Which type of products are you interested in?",
@@ -113,7 +113,7 @@ const questions = {
                 value: 'Active'
             },
         },
-        button: ' ' 
+        button: ' '
     },
     seventh: {
         heading: "What's your age range?",
@@ -131,27 +131,27 @@ const questions = {
                 text: '41-56',
                 value: 'Gen X'
             },
-            d: {    
+            d: {
                 text: '57+',
                 value: 'Boomers II'
             },
-            e: {    
+            e: {
                 text: 'Rather not say',
                 value: 'Unknown'
             },
         },
-        button: ' ' 
+        button: ' '
     }
 };
 
 //index to render the question with it's options
-let questionIndex = 0; 
+let questionIndex = 0;
 let questionsNumbers = [];
 
 //function that takes all the numbers' name of the question (first, second, etc.) and pushes it to questionsNumbers array.
 const questionNumFunc = () => {
-    for(let question in questions) {
-    questionsNumbers.push(question);
+    for (let question in questions) {
+        questionsNumbers.push(question);
     }
 };
 questionNumFunc();
@@ -165,15 +165,15 @@ const renderInputButtons = () => {
     let buttonText = questions[questionsNumbers[questionIndex]].button;
 
     const container = document.createElement('section');
-    container.setAttribute('id','questionContainer');
-    
+    container.setAttribute('id', 'questionContainer');
+
     let header = document.createElement('h2');
-    header.setAttribute('id','heading');
+    header.setAttribute('id', 'heading');
     header.innerText = question;
     container.appendChild(header);
 
     let paragraph = document.createElement('span');
-    paragraph.setAttribute('id','supporting-p');
+    paragraph.setAttribute('id', 'supporting-p');
     paragraph.innerText = supportParagraph;
     header.appendChild(paragraph);
 
@@ -184,13 +184,13 @@ const renderInputButtons = () => {
 
         // Also create a label for the text of the option.
         let labelElement = document.createElement('label');
-        labelElement.setAttribute('class','inputElement');
+        labelElement.setAttribute('class', 'inputElement');
         labelElement.setAttribute('for', options[option].value);
         labelElement.innerHTML = `<span>${options[option].text}</span>`;
         divElement.appendChild(labelElement);
 
         let inputElement = document.createElement('input');
-        inputElement.setAttribute('class','with-gap');
+        inputElement.setAttribute('class', 'with-gap');
         inputElement.setAttribute('id', options[option].value);
         inputElement.setAttribute('type', 'radio');
         inputElement.setAttribute('name', 'option');
@@ -209,22 +209,22 @@ renderInputButtons();
 
 //Function to remove all childrens of a div
 const removeChildren = (domElement) => {
-    while(domElement.firstChild){
-      domElement.removeChild(domElement.firstChild);
+    while (domElement.firstChild) {
+        domElement.removeChild(domElement.firstChild);
     }
 }
 
 //selecting the next question button and creating an empty array to push the value of the input
 const nextQuestionButton = document.querySelector('.nextQuestionButton');
-const response = ['Active']; 
+const response = ['Active'];
 
 //function to shorten the amount of questions if the response is Flower or Topicals
 const checkResponse = () => {
-    if (questionIndex === 1){
+    if (questionIndex === 1) {
         if (response[1] === 'Flower') {
-            questionsNumbers.splice(4,2); 
-        }else if (response[1] === 'Topicals'){
-            questionsNumbers.splice(4,2);
+            questionsNumbers.splice(4, 2);
+        } else if (response[1] === 'Topicals') {
+            questionsNumbers.splice(4, 2);
             console.log(questionsNumbers);
         }
     }
@@ -235,14 +235,14 @@ const renderNextQuestion = () => {
     let userInput = document.querySelector("input[name='option']:checked").value;
     checkResponse();
     //checking if the index is shorter than the amount of questions to render
-    if(questionIndex < questionsNumbers.length -1){
+    if (questionIndex < questionsNumbers.length - 1) {
         questionIndex += 1;
         removeChildren(main);
         removeButtonColor();
         renderInputButtons();
         inputActive();
         response.push(userInput);
-        if(questionIndex == questionsNumbers.length -1) {
+        if (questionIndex == questionsNumbers.length - 1) {
             nextQuestionButton.innerText = 'Show Results';
         }
     } else {
@@ -270,25 +270,25 @@ let questionHeader = document.querySelector('#questionContainer');
 
 const removeButtonColor = () => {
     let buttonClass = document.querySelector(".nextQuestionButton").className;
-        if(buttonClass == 'nextQuestionButton activeButton') {
+    if (buttonClass == 'nextQuestionButton activeButton') {
         nextQuestionButton.classList.remove('activeButton');
-        }  
+    }
 }
 
 const activeButtonColor = () => {
     let buttonClass = document.querySelector(".nextQuestionButton").className;
-    if(buttonClass !== 'nextQuestionButton activeButton'){
+    if (buttonClass !== 'nextQuestionButton activeButton') {
         nextQuestionButton.className += ' activeButton';
-        }
+    }
 }
 
 //function that adds a "click" event listener to the displayed inputs
 const inputActive = () => {
-  let activeOption = document.getElementsByClassName("inputElement");
-  let i;
-  for (i=0;i < activeOption.length; i++) {
-    activeOption[i].addEventListener('click', activeButtonColor);
-  }
+    let activeOption = document.getElementsByClassName("inputElement");
+    let i;
+    for (i = 0; i < activeOption.length; i++) {
+        activeOption[i].addEventListener('click', activeButtonColor);
+    }
 }
 
 inputActive();
