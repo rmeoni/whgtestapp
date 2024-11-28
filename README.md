@@ -1,37 +1,16 @@
-## Welcome to GitHub Pages
+# Case Study  
+## Project Overview  
 
-You can use the [editor on GitHub](https://github.com/rmeoni/whgtestapp/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+### The Problem  
+Wind Hill Growers wanted to create a stronger online presence and better connect with their customers. They needed a way to make their product recommendations more personal and engaging. Without an existing system or large budget, they sought a simple yet effective web application to showcase their products and provide tailored suggestions based on customer preferences.  
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## The Goal  
+The goal was to design and build a web app that could take user input, such as preferences and needs, and deliver personalized product recommendations. It had to be user-friendly, visually appealing, and easy for the company to maintain.  
 
-### Markdown
+## My Role  
+As the UX Designer and Developer, I took on the project from start to finish:  
+- **Design**: I created the user interface in Figma, focusing on a clean, intuitive layout that aligned with the company’s branding.  
+- **Development**: I built the application from scratch using HTML, CSS, and Vanilla JavaScript, ensuring a responsive and engaging experience across devices.  
+- **Functionality**: Using JavaScript, I developed a system to process user inputs and generate customized product suggestions, adding an interactive and dynamic element to the site.  
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/rmeoni/whgtestapp/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+This project was a perfect blend of creativity and technical skill, showcasing my ability to deliver a solution that’s both functional and delightful to use.  
