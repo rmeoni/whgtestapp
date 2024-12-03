@@ -24,7 +24,7 @@ const questions = {
         button: ' '
     },
     second: {
-        heading: 'What do you enjoy doing when high?',
+        heading: 'What do you enjoy doing when medicated?',
         paragraph: '',
         options: {
             a: {
